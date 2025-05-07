@@ -1,28 +1,26 @@
 body.form-page-body {
-    /* Overrides for form.html body */
+
     padding: 0;
-    align-items: stretch; /* Make children stretch to full width */
-    /* justify-content: flex-start; If needed to align content to top */
+    align-items: stretch;
+
 }
 
 .form-container {
-    max-width: none; /* Remove max-width restriction */
-    width: 100%;     /* Take full width of parent (body) */
-    height: 100vh;   /* Take full viewport height */
-    padding: 30px;   /* Keep some internal padding, adjust as needed */
-    box-sizing: border-box; /* Include padding in width/height calculation */
-    overflow-y: auto; /* Allow vertical scrolling within the form container if content overflows */
-    display: flex; /* Added to allow for centering of the form content if desired */
-    flex-direction: column; /* Stack form elements vertically */
-    /* align-items: center; /* Uncomment to center form content horizontally if form is not 100% width */
-    /* justify-content: center; /* Uncomment to center form content vertically if not 100% height and has extra space */
+    max-width: none;
+    width: 100%;     
+    height: 100vh;   
+    padding: 30px;   
+    box-sizing: border-box; 
+    overflow-y: auto; 
+    display: flex; 
+    flex-direction: column; 
 }
 
-/* Make the form itself take up a reasonable width if not full screen, e.g., for very wide screens */
+
 .form-container > form {
-    width: 100%; /* Default to full width of the container */
-    max-width: 700px; /* But cap it for very wide screens to maintain readability */
-    margin: 0 auto; /* Center the form if max-width is applied */
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .form-group {
@@ -52,7 +50,6 @@ body.form-page-body {
     resize: vertical;
 }
 
-/* Visually hide the default checkbox within a .checkbox-group but keep it accessible */
 .checkbox-group input[type="checkbox"] {
     border: 0;
     clip: rect(0 0 0 0);
@@ -62,28 +59,27 @@ body.form-page-body {
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap; /* For LTRB consistency */
+    white-space: nowrap; 
 }
 
 .checkbox-group {
-    display: flex; /* Added for alignment */
-    align-items: center; /* Align custom checkbox and label text */
-    margin-bottom: 10px; /* Spacing between checkbox options */
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
 }
 
 .checkbox-group label {
-    position: relative; /* For positioning the custom checkbox and checkmark */
-    padding-left: 28px; /* Space for the custom square (e.g., 18px square + 10px spacing) */
-    min-height: 20px; /* Ensure label has enough height */
-    display: inline-flex; /* Align label text with the custom square */
+    position: relative; 
+    padding-left: 28px; 
+    min-height: 20px;
+    display: inline-flex;
     align-items: center;
-    cursor: pointer; /* Indicate interactivity */
+    cursor: pointer;
     font-weight: normal;
     color: var(--color-text-medium);
-    margin-right: 15px; /* Keep existing margin if desired */
+    margin-right: 15px;
 }
 
-/* Custom square */
 .checkbox-group label::before {
     content: "";
     position: absolute;
@@ -98,13 +94,11 @@ body.form-page-body {
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Custom square when checkbox is checked */
 .checkbox-group input[type="checkbox"]:checked + label::before {
-    background-color: var(--color-accent-furia); /* Background when checked */
-    border-color: var(--color-accent-furia); /* Border color when checked */
+    background-color: var(--color-accent-furia);
+    border-color: var(--color-accent-furia);
 }
 
-/* Checkmark for the checked state */
 .checkbox-group input[type="checkbox"]:checked + label::after {
     content: "";
     position: absolute;
@@ -117,12 +111,10 @@ body.form-page-body {
     transform: rotate(45deg);
 }
 
-/* Focus style for accessibility - applied to the label::before when the hidden input is focused */
 .checkbox-group input[type="checkbox"]:focus + label::before {
     box-shadow: 0 0 0 2px var(--color-bg-light), 0 0 0 4px var(--color-accent-furia-dark);
 }
 
-/* Optional: Hover style on the custom square */
 .checkbox-group label:hover::before {
     border-color: var(--color-accent-furia-dark);
 }
