@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat da Torcida FURIA</title>
+    <link rel="stylesheet" href="/src/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="hamburgerIcon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="sideMenu">
+        <a href="https://twitter.com/furia" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i> Twitter/X</a>
+        <a href="https://www.facebook.com/furiagg/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.instagram.com/furiagg/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.tiktok.com/@furia" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i> TikTok</a>
+        <a href="https://www.twitch.tv/furiatv" target="_blank" title="Twitch"><i class="fab fa-twitch"></i> Twitch</a>
+        <a href="form.html" id="formLink"><i class="fas fa-clipboard-list"></i> Formulário da FaFúria</a>
+        <a href="team_cs.html" id="teamCSLink"><i class="fas fa-crosshairs"></i> Time CS</a>
+    </nav>
+
+    <div class="main-container">
+        <div class="twitch-player-container">
+            <iframe
+                src="https://player.twitch.tv/?channel=gaules&parent=localhost&parent=127.0.0.1"
+                frameborder="0"
+                allowfullscreen="true"
+                scrolling="no"></iframe>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <span>Chat da Torcida FURIA CS:GO</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Digite sua mensagem aqui...">
+                <button id="sendButton">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/src/js/script.js"></script>
+</body>
+</html> 

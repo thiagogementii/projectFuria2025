@@ -1,0 +1,157 @@
+body.form-page-body {
+    /* Overrides for form.html body */
+    padding: 0;
+    align-items: stretch; /* Make children stretch to full width */
+    /* justify-content: flex-start; If needed to align content to top */
+}
+
+.form-container {
+    max-width: none; /* Remove max-width restriction */
+    width: 100%;     /* Take full width of parent (body) */
+    height: 100vh;   /* Take full viewport height */
+    padding: 30px;   /* Keep some internal padding, adjust as needed */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    overflow-y: auto; /* Allow vertical scrolling within the form container if content overflows */
+    display: flex; /* Added to allow for centering of the form content if desired */
+    flex-direction: column; /* Stack form elements vertically */
+    /* align-items: center; /* Uncomment to center form content horizontally if form is not 100% width */
+    /* justify-content: center; /* Uncomment to center form content vertically if not 100% height and has extra space */
+}
+
+/* Make the form itself take up a reasonable width if not full screen, e.g., for very wide screens */
+.form-container > form {
+    width: 100%; /* Default to full width of the container */
+    max-width: 700px; /* But cap it for very wide screens to maintain readability */
+    margin: 0 auto; /* Center the form if max-width is applied */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border-medium);
+    border-radius: 5px;
+    color: var(--color-text-light);
+    font-size: 1em;
+    box-sizing: border-box;
+}
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Visually hide the default checkbox within a .checkbox-group but keep it accessible */
+.checkbox-group input[type="checkbox"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* For LTRB consistency */
+}
+
+.checkbox-group {
+    display: flex; /* Added for alignment */
+    align-items: center; /* Align custom checkbox and label text */
+    margin-bottom: 10px; /* Spacing between checkbox options */
+}
+
+.checkbox-group label {
+    position: relative; /* For positioning the custom checkbox and checkmark */
+    padding-left: 28px; /* Space for the custom square (e.g., 18px square + 10px spacing) */
+    min-height: 20px; /* Ensure label has enough height */
+    display: inline-flex; /* Align label text with the custom square */
+    align-items: center;
+    cursor: pointer; /* Indicate interactivity */
+    font-weight: normal;
+    color: var(--color-text-medium);
+    margin-right: 15px; /* Keep existing margin if desired */
+}
+
+/* Custom square */
+.checkbox-group label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px; /* Size of the square */
+    height: 18px; /* Size of the square */
+    border: 2px solid var(--color-accent-furia); /* Border color */
+    background-color: transparent; /* Default background */
+    border-radius: 3px; /* Slightly rounded corners for the square */
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Custom square when checkbox is checked */
+.checkbox-group input[type="checkbox"]:checked + label::before {
+    background-color: var(--color-accent-furia); /* Background when checked */
+    border-color: var(--color-accent-furia); /* Border color when checked */
+}
+
+/* Checkmark for the checked state */
+.checkbox-group input[type="checkbox"]:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 6px; 
+    top: 4px;  
+    width: 6px;
+    height: 10px;
+    border: solid var(--color-bg-dark); 
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Focus style for accessibility - applied to the label::before when the hidden input is focused */
+.checkbox-group input[type="checkbox"]:focus + label::before {
+    box-shadow: 0 0 0 2px var(--color-bg-light), 0 0 0 4px var(--color-accent-furia-dark);
+}
+
+/* Optional: Hover style on the custom square */
+.checkbox-group label:hover::before {
+    border-color: var(--color-accent-furia-dark);
+}
+
+fieldset {
+    border: 1px solid var(--color-border-medium);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+legend {
+    color: var(--color-text-lighter);
+    font-weight: bold;
+    padding: 0 10px;
+}
+.form-button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius-buttons);
+    background-color: var(--color-accent-furia);
+    color: var(--color-text-black);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+.form-button:hover {
+    background-color: var(--color-accent-furia-dark);
+}

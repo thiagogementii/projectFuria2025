@@ -1,0 +1,86 @@
+body.team-page-body {
+    padding: 0;
+    align-items: stretch;
+}
+
+.team-container {
+    max-width: none;
+    width: 100%;
+    height: 100vh;
+    padding: 20px 30px 30px 30px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-nav {
+    display: flex;
+    border-bottom: 2px solid var(--color-border-dark);
+    margin-bottom: 20px;
+}
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--color-text-dark);
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+.tab-button:hover {
+    color: var(--color-text-lighter);
+}
+.tab-button.active {
+    color: var(--color-accent-furia);
+    border-bottom: 3px solid var(--color-accent-furia);
+}
+
+.tab-content {
+    display: none;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+.tab-content.active {
+    display: block;
+}
+.tab-content h3 {
+    color: var(--color-accent-furia);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+ .tab-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+.tab-content li {
+    background-color: var(--color-bg-scrollbar-track);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 3px solid var(--color-accent-furia);
+}
+.tab-content li strong {
+    color: var(--color-text-lighter);
+}
+
+.liquipedia-link {
+     display: block;
+     margin-top: 15px;
+     font-size: 0.9em;
+}
+.liquipedia-link a {
+    color: var(--color-accent-link);
+    text-decoration: none;
+}
+ .liquipedia-link a:hover {
+     text-decoration: underline;
+ }
+
+ 
